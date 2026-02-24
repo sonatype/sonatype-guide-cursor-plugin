@@ -1,0 +1,32 @@
+{
+  "name": "sonatype-guide",
+  "displayName": "Sonatype Guide",
+  "version": "1.0.0",
+  "description": "AI-powered dependency intelligence. Check vulnerabilities, find safer versions, and make better dependency decisions using Sonatype's component data.",
+  "author": {
+    "name": "Sonatype",
+    "email": "support@sonatype.com"
+  },
+  "homepage": "https://guide.sonatype.com",
+  "repository": "https://github.com/sonatype/sonatype-guide-cursor-plugin",
+  "license": "MIT",
+  "logo": "assets/avatar.svg",
+  "keywords": [
+    "dependencies",
+    "security",
+    "vulnerabilities",
+    "sonatype",
+    "sbom",
+    "supply-chain"
+  ],
+  "category": "developer-tools",
+  "tags": [
+    "security",
+    "dependencies",
+    "supply-chain"
+  ],
+  "skills": "./skills/",
+  "rules": "./rules/",
+  "agents": "./agents/",
+  "mcpServers": "./mcp.json"
+}

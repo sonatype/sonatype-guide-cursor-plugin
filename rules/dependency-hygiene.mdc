@@ -1,0 +1,34 @@
+---
+description: Proactive dependency guidance when editing package manifests. Suggests security checks before adding or updating dependencies.
+alwaysApply: false
+globs:
+  - "**/package.json"
+  - "**/pom.xml"
+  - "**/build.gradle"
+  - "**/build.gradle.kts"
+  - "**/requirements.txt"
+  - "**/pyproject.toml"
+  - "**/go.mod"
+  - "**/Cargo.toml"
+  - "**/Gemfile"
+---
+
+# Dependency hygiene
+
+When editing dependency files:
+
+1. **Adding new dependencies**: Before adding a new dependency, consider running `/check-dependency <package>` to verify its security posture, license compatibility, and quality metrics.
+
+2. **Updating versions**: When changing dependency versions, use `/find-safer-version <package>` to find the most secure version that meets your requirements.
+
+3. **Version pinning**: Prefer exact versions over ranges to ensure reproducible builds. Avoid:
+   - `*` or `latest` (unpredictable)
+   - `^` or `~` ranges in production (can introduce vulnerabilities)
+
+4. **Periodic audits**: Run `/audit-dependencies` regularly to catch newly disclosed vulnerabilities in existing dependencies.
+
+5. **PURL format reference**:
+   - npm: `pkg:npm/<name>@<version>`
+   - Maven: `pkg:maven/<groupId>/<artifactId>@<version>`
+   - PyPI: `pkg:pypi/<name>@<version>`
+   - Go: `pkg:golang/<module>@<version>`

@@ -1,0 +1,26 @@
+---
+description: Security-focused dependency selection guidance. Prioritizes secure, well-maintained packages with compatible licenses.
+alwaysApply: true
+---
+
+# Security-first dependencies
+
+When working with dependencies, prioritize security:
+
+1. **Prefer high Developer Trust Scores**: Sonatype's Developer Trust Score considers security history, maintenance activity, and community health. Aim for scores above 80.
+
+2. **Avoid known vulnerabilities**: Never add dependencies with critical or high-severity CVEs. Use `/check-dependency` to verify before adding.
+
+3. **License compatibility**: For commercial projects, prefer permissive licenses (MIT, Apache 2.0, BSD). Be cautious with:
+   - GPL (copyleft, may require source disclosure)
+   - AGPL (network copyleft)
+   - Unknown or custom licenses
+
+4. **Maintenance signals**: Prefer packages that are:
+   - Recently updated (within last 6 months)
+   - Actively maintained (responsive to issues)
+   - Well-documented
+
+5. **Transitive dependencies matter**: A secure direct dependency can still introduce risk through its dependencies. Full audits catch these.
+
+6. **When in doubt**: Run `/check-dependency` before adding any new dependency to your project.

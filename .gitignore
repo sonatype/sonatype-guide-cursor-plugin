@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Env (do not commit tokens)
+.env
+.env.local
+*.local
+
+# Logs and temp
+*.log
+.tmp/
+tmp/
+temp/
