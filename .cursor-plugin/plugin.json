@@ -10,7 +10,7 @@
   "homepage": "https://guide.sonatype.com",
   "repository": "https://github.com/sonatype/sonatype-guide-cursor-plugin",
   "license": "MIT",
-  "logo": "assets/avatar.svg",
+  "logo": "assets/Sonatype-guide-icon-reverse.png",
   "keywords": [
     "dependencies",
     "security",
