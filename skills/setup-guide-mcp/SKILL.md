@@ -19,14 +19,14 @@ Use when setting up the Sonatype Guide MCP server or troubleshooting connection 
 1. Check if `SONATYPE_GUIDE_TOKEN` environment variable is set.
 2. If not set, guide user through token setup:
    - Direct to token generation page
-   - Show configuration options (shell profile vs settings file)
-3. Verify MCP server connection by listing available tools.
-4. Test with a simple component lookup.
-5. Confirm successful setup.
+3. Add mcp server configuration to mcp.json file
+4. Verify MCP server connection by listing available tools.
+5. Test with a simple component lookup.
+6. Confirm successful setup.
 
 ## Configuration Options
 
-### Option A: Shell Profile (Recommended)
+### Shell Profile
 
 Add to `~/.zshrc`, `~/.bashrc`, or `~/.profile`:
 
@@ -39,17 +39,16 @@ Then reload:
 source ~/.zshrc  # or ~/.bashrc
 ```
 
-### Option B: Claude Code Settings
 
-Add to `.claude/settings.json` or `~/.claude/settings.json`:
+Add to `.cursor/mcp.json` in the "mcpServers" section:
+ "sonatype-mcp": {
+      "type": "http",
+      "url": "https://mcp.guide.sonatype.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SONATYPE_GUIDE_TOKEN}"
+      }
+    }
 
-```json
-{
-  "env": {
-    "SONATYPE_GUIDE_TOKEN": "your-token-here"
-  }
-}
-```
 
 ## Verification Steps
 
@@ -73,7 +72,7 @@ Add to `.claude/settings.json` or `~/.claude/settings.json`:
 
 | Issue | Solution |
 |-------|----------|
-| Token not recognized | Restart terminal/IDE after setting env var |
+| Token not recognized | Restart Cursor after setting env var |
 | MCP server not connecting | Verify token is valid at guide.sonatype.com |
 | API errors | Check network connectivity to mcp.guide.sonatype.com |
 | Rate limiting | Wait and retry, or upgrade Sonatype Guide plan |

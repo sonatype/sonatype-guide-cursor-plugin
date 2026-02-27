@@ -4,9 +4,17 @@ AI-powered dependency intelligence for Cursor. Check vulnerabilities, find safer
 
 ## Installation
 
-```bash
+**Important:** `/add-plugin` with a GitHub URL or `owner/repo` **does nothing** in Cursor (no response). Cursor only installs plugins that are on the **Cursor Marketplace**. So you must either submit this plugin at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish) first, or use a workaround below.
+
+**After the plugin is on the marketplace**, in Cursor chat run:
+
+```
 /add-plugin sonatype-guide
 ```
+
+**Workarounds before it’s published:**
+
+- **Local / cache:** See [INSTALL_TEST.md](INSTALL_TEST.md) — Option B (local path in `installed.json`) or Option C (clone into Cursor’s plugin cache).
 
 ## Prerequisites
 
