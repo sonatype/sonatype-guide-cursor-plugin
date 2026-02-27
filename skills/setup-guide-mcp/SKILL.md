@@ -20,9 +20,9 @@ Use when setting up the Sonatype Guide MCP server or troubleshooting connection 
 2. If not set, guide user through token setup:
    - Direct to token generation page
 3. Add mcp server configuration to mcp.json file
-3. Verify MCP server connection by listing available tools.
-4. Test with a simple component lookup.
-5. Confirm successful setup.
+4. Verify MCP server connection by listing available tools.
+5. Test with a simple component lookup.
+6. Confirm successful setup.
 
 ## Configuration Options
 
